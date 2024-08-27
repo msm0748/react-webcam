@@ -21,9 +21,10 @@ export default function App() {
         <div key={key}>
           <Webcam
             audio={false}
-            videoConstraints={{ deviceId: device.deviceId }}
+            videoConstraints={{ deviceId: device.deviceId, torch: true }}
           />
-          {device.label || `Device ${key + 1}`}
+          <div>{JSON.stringify(device)}</div>
+          <div>{device.label || `Device ${key + 1}`}</div>
         </div>
       ))}
     </>
